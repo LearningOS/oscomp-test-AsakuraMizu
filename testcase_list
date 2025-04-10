@@ -1,6 +1,7 @@
 /musl/busybox echo "#### OS COMP TEST GROUP START basic-musl ####"
 /musl/busybox echo "#### OS COMP TEST GROUP START basic-glibc ####"
 /musl/busybox sh -c "cd basic && /musl/busybox sh run-all.sh"
+/musl/basic/sleep
 /musl/busybox echo "#### OS COMP TEST GROUP END basic-glibc ####"
 /musl/busybox echo "#### OS COMP TEST GROUP END basic-musl ####"
 
@@ -10,3 +11,9 @@
 /musl/busybox sh run-dynamic.sh
 /musl/busybox echo "#### OS COMP TEST GROUP END libctest-glibc ####"
 /musl/busybox echo "#### OS COMP TEST GROUP END libctest-musl ####"
+
+/musl/busybox echo "#### OS COMP TEST GROUP START busybox-musl ####"
+/musl/busybox echo "#### OS COMP TEST GROUP START busybox-glibc ####"
+/musl/busybox sh /musl/busybox_testcode.sh
+/musl/busybox echo "#### OS COMP TEST GROUP END busybox-glibc ####"
+/musl/busybox echo "#### OS COMP TEST GROUP END busybox-musl ####"

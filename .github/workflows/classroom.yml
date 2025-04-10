@@ -49,8 +49,8 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
-          repository: AsakuraMizu/starry-next
-          ref: 5787d50ff50b88f5ca9fc703bb640a6dfa798623
+          repository: Starry-OS/starry-next
+          ref: 1c25ec6dc5494067d88062d36f7edb82c6081d41
           path: starry-next
       - name: Run testcases
         run: |
@@ -62,19 +62,19 @@ jobs:
           touch output.txt
 
           echo 'start---riscv64' >> output.txt
-          make ARCH=riscv64 oscomp_run >> output.txt || true
+          make ARCH=riscv64 SMP=4 oscomp_run >> output.txt || true
           echo 'end---riscv64' >> output.txt
 
           echo 'start---aarch64' >> output.txt
-          make ARCH=aarch64 oscomp_run >> output.txt || true
+          make ARCH=aarch64 SMP=4 oscomp_run >> output.txt || true
           echo 'end---aarch64' >> output.txt
 
           echo 'start---loongarch64' >> output.txt
-          make ARCH=loongarch64 oscomp_run >> output.txt || true
+          make ARCH=loongarch64 SMP=4 oscomp_run >> output.txt || true
           echo 'end---loongarch64' >> output.txt
 
           echo 'start---x86_64' >> output.txt
-          make ARCH=x86_64 ACCEL=n oscomp_run >> output.txt || true
+          make ARCH=x86_64 ACCEL=n SMP=4 oscomp_run >> output.txt || true
           echo 'end---x86_64' >> output.txt
 
           cat output.txt
