@@ -46,16 +46,20 @@ jobs:
       - name: Build python environment
         run: sudo apt-get install -y python3 python3-pip
 
-      - name: Checkout source code
+      - name: Checkout source code (Starry)
         uses: actions/checkout@v4
         with:
-          repository: Starry-OS/starry-next
-          ref: 24fc43f870436657fbf970c88995b88b9ca79fca
+          repository: Mivik/starry-next
+          ref: 63df6b64890f9d3a393bb7892730334431f04a52
           path: starry-next
+      - name: Checkout source code (ArceOS)
+        uses: actions/checkout@v4
+        with:
+          repository: Mivik/arceos
+          ref: e9ceed347ce96fea68220409de26bc54d1820716
+          path: starry-next/.arceos
       - name: Run testcases
         run: |
-          cp testcase_list starry-next/apps/oscomp
-
           cd starry-next
           ./scripts/get_deps.sh
 
