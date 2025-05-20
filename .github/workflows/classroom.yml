@@ -43,13 +43,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Mivik/starry-next
-          ref: ea9b44afab96dcd662325e06f5a402f0392e7e69
+          ref: 2c761f7d9c91feee288fb9924c0a0ebaeac0fdfc
           path: starry-next
       - name: Checkout source code (ArceOS)
         uses: actions/checkout@v4
         with:
           repository: Mivik/arceos
-          ref: c2e96c85fa6cfcbc7d6ef55225b20197567e50a7
+          ref: 1896f9f4c7d5c25d387b8c1e0f6544e598ece96a
           path: starry-next/.arceos
       - name: Run testcases
         run: |
